@@ -1,0 +1,4 @@
+# Read-only Postgres MCP server
+mcp[cli]>=2.3.0
+psycopg[binary]>=3.2
+python-dotenv>=1.0

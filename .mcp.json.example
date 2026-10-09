@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "Project-scoped MCP config. Copy this into a project root as .mcp.json and",
+    "commit it -- it contains no secrets. Each person sets POSTGRES_MCP_HOME to",
+    "wherever they cloned postgres-mcp, and puts their own credentials in that",
+    "checkout's .env file.",
+    "On Windows use .venv/Scripts/python.exe instead of .venv/bin/python."
+  ],
+  "mcpServers": {
+    "postgres-readonly": {
+      "command": "${POSTGRES_MCP_HOME}/.venv/bin/python",
+      "args": ["${POSTGRES_MCP_HOME}/server.py"],
+      "env": {
+        "PG_MCP_MAX_ROWS": "200",
+        "PG_MCP_STATEMENT_TIMEOUT_MS": "30000"
+      }
+    }
+  }
+}
